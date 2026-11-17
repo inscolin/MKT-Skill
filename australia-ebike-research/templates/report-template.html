@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{REPORT_TITLE}} | Australia E-bike Research</title>
+<style>
+:root{--ink:#172b42;--blue:#245b91;--bg:#f3f6fa;--line:#dbe3ec;--muted:#68788b;--accent:#167b61}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Arial,"Microsoft YaHei",sans-serif}
+header{background:linear-gradient(120deg,#10243a,#285b8a);color:#fff;padding:48px max(24px,calc((100% - 1160px)/2))}
+header h1{margin:0 0 8px;font-size:clamp(26px,4vw,38px)}header p{margin:0;color:#d8e6f3}
+main{max-width:1160px;margin:28px auto;padding:0 20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}nav a{background:#fff;border:1px solid var(--line);border-radius:6px;padding:7px 11px;color:var(--blue);text-decoration:none;font-size:13px}
+section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;margin:18px 0;overflow-x:auto}
+h2{margin:0 0 14px;color:var(--ink);font-size:23px}h3{color:var(--blue);font-size:17px}
+small,.muted{color:var(--muted)}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.kpi{background:#f4f8fc;border:1px solid var(--line);border-radius:8px;padding:16px}.kpi strong{display:block;font-size:25px;color:var(--blue)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:12px 0}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:#edf2f8;white-space:nowrap}
+.callout{padding:14px 16px;border-left:4px solid var(--blue);background:#eef5fc;margin:14px 0}.warning{border-color:#d69a31;background:#fff7e8}
+input{padding:9px 11px;border:1px solid var(--line);border-radius:6px;max-width:360px;width:100%}
+footer{text-align:center;color:var(--muted);padding:26px;font-size:12px}
+@media print{body{background:#fff}nav,input{display:none}section{break-inside:avoid;border-color:#bbb}header{background:#fff;color:#111;padding:20px}header p{color:#444}}
+</style>
+</head>
+<body>
+<header>
+<h1>{{REPORT_TITLE}}</h1>
+<p>{{SUBTITLE}}</p>
+<p style="margin-top:14px;font-size:12px">Research date: {{RESEARCH_DATE}} · Market: Australia · Currency: AUD</p>
+</header>
+<main>
+<nav>
+<a href="#summary">Summary</a><a href="#products">Products</a><a href="#matrix">Comparison</a><a href="#regulation">Regulation</a><a href="#insights">Insights</a><a href="#sources">Sources</a>
+</nav>
+<section id="summary"><h2>01. Executive Summary</h2><div class="kpis">{{KPI_CARDS}}</div><div>{{EXECUTIVE_SUMMARY}}</div></section>
+<section id="products"><h2>02. Product Profiles</h2>{{PRODUCT_PROFILES}}</section>
+<section id="matrix"><h2>03. Technical Feature Matrix</h2><p class="muted">Values are comparable only where definitions, market versions and test conditions match. Missing values are explicitly labelled.</p>{{COMPARISON_TABLES}}</section>
+<section id="regulation"><h2>04. Australian Regulatory Considerations</h2><div class="callout warning">Regulatory status must be verified against current official Commonwealth and relevant state/territory sources. This report is not legal advice.</div>{{REGULATORY_ANALYSIS}}</section>
+<section id="insights"><h2>05. Competitive Insights & Actions</h2>{{INSIGHTS}}</section>
+<section id="sources"><h2>06. Sources, Assumptions & Limitations</h2>{{SOURCE_REGISTER}}{{LIMITATIONS}}</section>
+</main>
+<footer>Australia E-bike Research · {{RESEARCH_DATE}} · Internal working document</footer>
+</body>
+</html>
